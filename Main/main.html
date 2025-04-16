@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/Project/Page/css/style2.css">
+		<title>Bibliotheca System</title>
+	<script>
+			function issue()
+			{
+				window.location.assign("http://localhost:5000/");
+			}
+			
+			function ret()
+			{
+				var now = new Date();
+            	var exDate = new Date(now.getTime() + 3600000);
+            	document.cookie = "isRet=1; expires="+exDate.toUTCString()+"; path=/";
+				window.location.assign("http://localhost:5000/");
+			}
+			
+	</script>
+	</head>
+
+	<body>
+		<div class="sidebar">
+		<div class="logo">
+		    <br><br><br><br>
+		    <h1>Bibliotheca</h1>
+		    <br><hr><br><hr><br><br>
+		    <img src="/Project/Page/css/library_logo.jpg" alt="Library Logo">
+		</div>
+	    </div>
+	    <div class="content">
+		<header>
+		    <h1>Welcome to Library Management</h1>
+		</header>
+		
+		<div class = "mainarea">
+			<br><br>
+			<div class="buttcon">
+				<button onclick="issue()">Issue Book</button>
+				<br><br>
+				<button onclick="ret()">Return Book</button>
+			</div>
+		</div>
+		
+		<div class="footer">
+		    <p>&copy; 2023 Library Management System by BG5</p>
+		</div>
+	</body>
+</html>

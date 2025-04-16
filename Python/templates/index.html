@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<style>
+			@font-face {                      /* imports a custom font face */
+			font-family: Baskerville;
+			src: url(BASKVILL.TTF);
+			}
+
+			body {
+				font-family: Baskerville, Arial, sans-serif;
+				display: flex;
+			}
+
+			.sidebar {
+				background-color: #470118;
+				color: #fff;
+				width: 20%;
+				min-height: 100vh;
+				text-align: center;
+				padding: 20px;
+				min-width: 260px;
+				border-right: 3px solid #fff;
+			}
+
+			.sidebar hr{
+				position: relative;         /* position adjusted from its normal position */
+				top: 20px;
+				border: none;
+				height: 9px;
+				background: #fff;
+				margin-bottom: 50px;
+			}
+
+			.content {
+				width: 80%;
+				min-width: 500px;
+				min-height: 100vh;
+			}
+
+			.logo h1 {
+				font-size: 2.8rem;
+				max-width: 100%;
+				word-wrap: break-word;
+				text-align: center;
+			}
+
+			.mainarea {
+				min-height: 60.5%;
+				height: 80vh;
+				background-size: cover;
+				background-position: center;
+				background-color: #f2f0e7;
+				overflow-x: hidden;
+				overflow-y: auto;
+			}
+
+			header {
+				background-color: #470118;
+				color: #fff;
+				padding: 50px;
+				text-align: center;
+				white-space: nowrap;            /* Prevent text from wrapping to the next line */
+			}
+			
+			.rstbtn button {
+				padding: 10px;
+				background-color: #470118;
+				color: #fff;
+				border: none;
+				border-radius: 4px;                   /* rounds off corners */
+				cursor: pointer;
+				width: 40%;
+				height: 65px;
+				margin-left: 28%;
+				
+			}
+
+			.rstbtn button:hover {
+				background-color: #D0507A;
+			}
+			
+		</style>
+		<title>Serial Data Display</title>
+		<script>
+			function gotoIssue()
+			{
+				window.location.assign("http://localhost/Project/Main/issue.php");
+			}
+			
+			function gotoRet()
+			{
+				window.location.assign("http://localhost/Project/Main/return.php");
+			}
+			
+			function reset_issue()
+			{
+				document.cookie="memID=null; max-age=0; path=/";
+				document.cookie="bookID=null; max-age=0; path=/";
+				document.cookie="isRet=null; max-age=0; path=/";
+				history.go(-1);
+			}
+			    		  
+		</script>
+	</head>
+	<body>
+		<div class="sidebar">
+		<div class="logo">
+		    <br><br><br><br>
+		    <h1>Bibliotheca</h1>
+		    <br><hr><br><hr><br><br>
+		</div>
+	    </div>
+	    <div class="content">
+		<header>
+		    <h1>Welcome to Library Management</h1>
+		</header>
+		
+		<div class = "mainarea">
+			<br><br>
+			<div id="data-container">
+				<div class="rstbtn">
+					<button onclick="reset_issue()">Cancel Transaction</button>
+				</div>
+				<br>
+				{% if serial_data|length > 10 %}
+				    <p>You entered: {{ serial_data }}</p>
+				    <script>
+				    	var memID = "{{ serial_data }}";
+				    	if(document.cookie.indexOf('memID') === -1 && document.cookie.indexOf('isRet') === -1)			
+					    {
+					    	var now = new Date();
+					    	var exDate = new Date(now.getTime() + 3600000);
+					    	document.cookie = "memID="+memID+"; expires="+exDate.toUTCString()+"; path=/"; 
+				    		gotoIssue();
+				    	}
+				    	else if(document.cookie.indexOf('memID') === -1 && document.cookie.indexOf('isRet') !== -1)
+				    	{
+				    		var now = new Date();
+					    	var exDate = new Date(now.getTime() + 3600000);
+					    	document.cookie = "memID="+memID+"; expires="+exDate.toUTCString()+"; path=/"; 
+				    		gotoRet();
+				    	}
+				    	else if(document.cookie.indexOf('isRet') === -1)
+				    	{
+				    		var now1 = new Date();
+					    	var exDate1 = new Date(now1.getTime() + 3600000);
+				    		document.cookie = "bookID="+memID+"; expires="+exDate1.toUTCString()+"; path=/";
+				    		gotoIssue();
+				    	}
+				    	else
+				    	{
+				    		var now2 = new Date();
+					    	var exDate2 = new Date(now2.getTime() + 3600000);
+				    		document.cookie = "bookID="+memID+"; expires="+exDate2.toUTCString()+"; path=/";
+				    		gotoRet();
+				    	}
+				    		
+				    </script>
+				    
+				{% else %}
+				    <script>
+				        location.reload();
+				    </script>
+				{% endif %}
+			</div>
+		</div>
+	</body>
+</html>

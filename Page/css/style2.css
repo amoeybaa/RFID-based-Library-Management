@@ -1,0 +1,103 @@
+@font-face {                      /* imports a custom font face */
+    font-family: Baskerville;
+    src: url(BASKVILL.TTF);
+}
+
+body {
+    font-family: Baskerville, Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    background-color: #470118;
+    color: #fff;
+    width: 20%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    min-width: 260px;
+    border-right: 3px solid #fff;
+}
+
+.sidebar hr{
+    position: relative;         /* position adjusted from its normal position */
+    top: 20px;
+    border: none;
+    height: 9px;
+    background: #fff;
+    margin-bottom: 50px;
+}
+
+.content {
+    width: 80%;
+    min-width: 500px;
+    min-height: 100vh;
+}
+
+.logo img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+    font-size: 2.8rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.mainarea {
+    min-height: 60.5%;
+    height: 80vh;
+    background: url(bg.png) repeat-y;
+    background-size: cover;
+    background-position: center;
+    background-color: #fef9e7ac;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+header {
+    background-color: #470118;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    white-space: nowrap;            /* Prevent text from wrapping to the next line */
+}
+
+.footer {
+    background-color: #470118;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    float: inline-end;
+    height: 30px;
+    width: 100%;
+}
+
+.buttcon, .rstbtn {
+    width: 500px;
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f2f0e7a4;
+    display: flex;
+}
+
+.buttcon button, .rstbtn button {
+    padding: 10px;
+    background-color: #470118;
+    color: #fff;
+    border: none;
+    border-radius: 4px;                   /* rounds off corners */
+    cursor: pointer;
+    width: 40%;
+    height: 65px;
+	margin-left: 7%;
+}
+
+.buttcon button:hover, .rstbtn button:hover {
+    background-color: #D0507A;
+}
+

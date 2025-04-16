@@ -1,0 +1,353 @@
+@font-face {                      /* imports a custom font face */
+    font-family: Baskerville;
+    src: url(BASKVILL.TTF);
+}
+
+* {                              /* Set all margins and paddings to 0 by default */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;      /* allows us to include the padding and border in an element's total width and height */
+}
+
+body {
+    font-family: Baskerville, Arial, sans-serif;
+    display: flex;              /* used to set the length of flexible items */
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #470118;
+    color: #fff;
+    width: 20%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    min-width: 260px;
+    border-right: 3px solid #fff;
+}
+
+.sidebar hr{
+    position: relative;         /* position adjusted from its normal position */
+    top: 20px;
+    border: none;
+    height: 9px;
+    background: #fff;
+    margin-bottom: 50px;
+}
+
+.logo img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.logo h1 {
+    font-size: 2.8rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo a:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.logo a:visited {
+    color: #fff;    
+}
+
+/* Central Content styles */
+.content {
+    width: 80%;
+    min-width: 500px;
+    min-height: 100vh;
+}
+
+.mainarea {
+    min-height: 60.5%;
+    height: 80vh;
+    background: url(bg.png) repeat-y;
+    background-size: cover;
+    background-position: center;
+    background-color: #fef9e7ac;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* Header styles */
+header {
+    background-color: #470118;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    white-space: nowrap;            /* Prevent text from wrapping to the next line */
+}
+
+/* Footer styles */
+.footer {
+    background-color: #470118;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    float: inline-end;
+    height: 50px;
+    width: 100%;
+}
+
+/* Navigation menu styles */
+.navigation ul {
+    list-style-type: none;              /* removes bullet point */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ddd;
+    display: flex;
+    justify-content: space-around;      /* spaces out the list items over the page */
+    border-bottom: 3px solid #fff;
+    border-top: 3px solid #fff;
+    min-width: 980px;
+}
+
+.navigation li {
+    float: left;                         /* list items float to the left of the list */
+}
+
+.navigation a {
+    text-decoration: none;               /* removes the default underline of hyperlinks */
+    display: block;
+    color: #470118;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 1.4rem;
+    height: 50px;
+    width: 225px;
+    min-width: fit-content;
+}
+
+/* Style the links */
+.navigation a:hover {
+    color: black;
+    background-color: rgb(142, 139, 139);
+}
+
+.login-container , .account_info, .report_books, .feedback, .update_book, .update_output, .update_member, .m_update_output, .add_new_book{
+    width: 500px;
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f2f0e7a4;
+}
+
+.login-container h2, .mainarea h2, .report_books h2, .feedback h2{
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.login-container form, .report_books form, .feedback form, .update_output form, .update_member form, .m_update_output form, .add_new_book form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label, .search-form label, .report_books label, .feedback label, .account_info p, .update_book label, .update_output label, .update_member label, .m_update_output label, .add_new_book label {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.login-container input, .search-form input, .report_books input, select, textarea, .feedback input, select, textarea, .update_book input, .update_output input, .update_member input, .m_update_output input, .add_new_book input {
+    padding: 9px;
+    margin-bottom: 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.login-container button, .search-form button, .account_info button, .report_books button, .feedback button, .update_book button, .update_output button, .update_member button, .m_update_output button, .add_book button, .del_book button, .add_new_book button {
+    padding: 10px;
+    background-color: #470118;
+    color: #fff;
+    border: none;
+    border-radius: 4px;                   /* rounds off corners */
+    cursor: pointer;
+}
+
+.login-container button:hover, .search-form button:hover, .account_info button:hover, .report_books button:hover, .feedback button:hover, .update_book button:hover, .update_output button:hover, .update_member button:hover, .m_update_output button:hover, .add_book button:hover, .del_book button:hover, .add_new_book button:hover {
+    background-color: #D0507A;
+}
+
+.button-container{
+	display: flex;
+}
+
+.button-container button {
+	width: 40%;
+	margin-left: 7%;
+}
+
+.add_del {
+	display: flex;
+	height: 100px;
+}
+
+
+.add_book {
+	min-width: 150px;
+    margin-left:  10%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f2f0e7a4;
+    white-space: nowrap;
+}
+
+.del_book {
+	min-width: 200px;
+    margin:  8px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f2f0e7a4;
+    margin-left: 52%;
+    white-space: nowrap;
+
+}
+
+.search-results {
+    width: 80%;
+    height: 60%;
+    margin:  auto;
+    padding: 20px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: #f2f0e7a4;
+}
+
+.search-form {
+    width: 45%;
+    margin:  auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f2f0e7a4;
+    position: relative;
+    text-align: center;
+    min-width: 385px;
+}
+
+.left-pads {
+    margin: 0 18px;     /* clockwise: top = 0, right: 18px. Applies to opposite sides automatically */
+}
+
+.account_info {
+    position: relative;
+}
+
+.account_info button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.account_info img {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;    
+}
+
+.tables table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+.tables th, td {
+    border: 2px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.tables th, tr {
+    background-color: #f2f2f2b4;
+}
+
+.tables tr:hover {
+    background-color: #ddd;
+}
+
+.left-right {
+    display: flex;               /* flexible display elements */
+    height: 50%;
+    text-align: center;
+}
+
+.left-right h3 {
+    padding: 12px;
+}
+
+.left-area {
+    width: 45%;
+    height: 75%;
+    margin-left: 3.33%;
+    background-color: #f2f0e7;
+    text-overflow: ellipsis;
+}
+
+.right-area {
+    width: 45%;
+    height: 75%;
+    margin: 0 3.33%;                /* top and bottom margin are 0, left and right margins are 3.33% of screen width */
+    background-color: #f2f0e7;
+    text-overflow: ellipsis;
+}
+
+.para, .ruleinfo {
+    background-color: #f2f2f2b4;
+    font-size: 1.2rem;
+    margin: 2%;
+    padding: 15px;
+    line-height: 2;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.ruleinfo {
+    text-align: left;
+    padding-left: 50px;
+}
+
+textarea {
+    resize: none;
+}
+
+.search-results table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.search-results th, td {
+    padding: 8px;
+    height: auto;
+}
+
+.search-results td, th{
+    border: darkgrey 2px solid;
+}
+
+.admin-login {
+	height: 35px;
+	width: 200px;
+	position: absolute;
+	top: 50px;
+	right: 20px;
+	background-color: #f2f0e7a4;
+	padding: 10px;
+}
+
