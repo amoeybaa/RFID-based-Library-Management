@@ -17,11 +17,10 @@
     <div class="content">
         <header>
             <?php
-		session_start();
-		$var = $_SESSION['var'];
-		echo "<h1>Hello $var!</h1>";
-		// pg_close($con);
-	    ?>
+                session_start();
+                $var = $_SESSION['var'];
+                echo "<h1>Hello $var!</h1>";
+            ?>
         </header>
         <nav class="navigation">
             <ul>

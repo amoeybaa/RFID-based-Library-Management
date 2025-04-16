@@ -16,9 +16,15 @@
 	    <div class="content">
 		<header>
 		    <?php
-			session_start();
-			$var = $_SESSION['admin'];
-			echo "<h1>Hello $var!</h1>";
+				session_start();
+				$var = $_SESSION['admin'];
+				echo "<h1>Hello $var!</h1>";
+
+				$host = "localhost";		// variables to store database connection parameters.
+				$username = "root";
+				$pass = "";
+				$database = "project";
+				$port = 3306;
 		    ?>
 		</header>
 		<nav class="navigation">
@@ -44,7 +50,7 @@
 			<br><br>
 			<div class="update_output">
 			<?php
-				$con = new mysqli("localhost", "root", "", "project", 3306);
+				$con = new mysqli($host, $username, $pass, $database, $port);
 				if(isset($_POST['search']))
 				{
 					$key = $_POST['key'];
@@ -84,7 +90,7 @@
 				}
 			?>
 			<?php
-				$con = new mysqli("localhost", "root", "", "project", 3306);
+				$con = new mysqli($host, $username, $pass, $database, $port);
 				if(isset($_POST['del']))
 				{
 					$id = $_SESSION['id'];

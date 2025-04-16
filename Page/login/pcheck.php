@@ -1,9 +1,15 @@
 <?php
 	session_start();
+	$host = "localhost";		// variables to store database connection parameters.
+	$username = "root";
+	$pass = "";
+	$database = "project";
+	$port = 3306;
+
 	$var = $_SESSION['var'];
 	$pwd = $_POST['ppass'];
 	$npas = $_POST['password'];
-    $con = new mysqli("localhost", "root", "", "project", 3306);
+    $con = new mysqli($host, $username, $pass, $database, $port);
 	$ans = $con->query("SELECT pass FROM member WHERE instituteID = $var");
 	$row = mysqli_fetch_row($ans);
 	if(password_verify($pwd, $row[0]))

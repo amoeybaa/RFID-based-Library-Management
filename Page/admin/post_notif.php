@@ -16,9 +16,9 @@
 	    <div class="content">
 		<header>
 		    <?php
-			session_start();
-			$var = $_SESSION['admin'];
-			echo "<h1>Hello $var!</h1>";
+				session_start();
+				$var = $_SESSION['admin'];
+				echo "<h1>Hello $var!</h1>";
 		    ?>
 		</header>
 		<nav class="navigation">
