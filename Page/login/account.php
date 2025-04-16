@@ -19,7 +19,11 @@
 				session_start();
 				$var = $_SESSION['var'];
 				echo "<h1>Hello $var!</h1>";
-				// pg_close($con);
+				$host = "localhost";		// variables to store database connection parameters.
+				$username = "root";
+				$pass = "";
+				$database = "project";
+				$port = 3306;
 			?>
 		</header>
 		<nav class="navigation">
@@ -40,7 +44,7 @@
 			<?php
 				// session_start();
 				$var = $_SESSION['var'];
-				$con = new mysqli("localhost", "root", "", "project", 3306);
+				$con = new mysqli($host, $username, $pass, $database, $port);
 				$ans = $con->query("SELECT first_name, last_name, email, dues FROM member WHERE instituteID = $var");
 				$row = mysqli_fetch_row($ans);
 				$ans2 = $con->query("SELECT DISTINCT title FROM book, borrowing, member where book.bookID in(SELECT bookID FROM borrowing WHERE memberID in(SELECT memberID FROM member WHERE instituteID = $var))");

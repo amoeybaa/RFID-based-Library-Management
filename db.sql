@@ -22,10 +22,10 @@ CREATE TABLE member(
 );
 
 INSERT into member values
-	(DEFAULT, 'Alpha', 'Bravo', 218478, 'abc@gmail.com', 1234567890, 'Nashik', 0, '$2y$10$1rweLZFwaCOPVHCj2.iMUO//RKpn0tVVQ.EZ0UsGkxIHWSkYv9hnO', '5900D4B55F67'),		-- Abcd1234
-	(DEFAULT, 'Sierra', 'Tango', 218452, 'ss@hotmail.com', 9987456321, 'Pune', 1.75, '$2y$10$rvfiBSV9mPEcyqz2WM9p1ecH2HJGqvtyLuLqjDWb1BfHf4jSufryW', 'A'),			-- Jaishreeram
-	(DEFAULT, 'Oscar', 'Panther', 218442, 'orcas@yahoo.com', '+91 9988776600', 'Noida', 0, '$2y$10$cm4ycs.dkJwa8FmAnHHlR.R9qav/d0rAN5y9SUk0pGv4HiTPPkJBq', '5900D4A40E27'),	-- Chipichipi
-	(DEFAULT, 'Hunter', 'Golf', 218421, 'hunter@abc.com', '6543210987', 'Bhagal, Surat', 12.55, '$2y$10$zE5zM8zIcCVQAC0qvdJJLeNNcJCZB0BfWtTPHv/vUFwUW.J1YTVn6', 'C');	-- Iamsaxyy
+	(DEFAULT, 'Alpha', 'Bravo', 218478, 'abc@gmail.com', '1234567890', 'Nashik', 0, '$2y$10$1rweLZFwaCOPVHCj2.iMUO//RKpn0tVVQ.EZ0UsGkxIHWSkYv9hnO', '5900D4B55F67'),		-- Abcd1234
+	(DEFAULT, 'Sierra', 'Tango', 218452, 'ss@hotmail.com', '9987456321', 'Pune', 1.75, '$2y$10$rvfiBSV9mPEcyqz2WM9p1ecH2HJGqvtyLuLqjDWb1BfHf4jSufryW', 'ST'),			-- Jaishreeram
+	(DEFAULT, 'Oscar', 'Panther', 218442, 'oscar@yahoo.com', '+91 9988776600', 'Noida', 0, '$2y$10$cm4ycs.dkJwa8FmAnHHlR.R9qav/d0rAN5y9SUk0pGv4HiTPPkJBq', '5900D4A40E27'),	-- Chipichipi
+	(DEFAULT, 'Hunter', 'Golf', 218421, 'hunter@abc.com', '6543210987', 'Bhagal, Surat', 12.55, '$2y$10$zE5zM8zIcCVQAC0qvdJJLeNNcJCZB0BfWtTPHv/vUFwUW.J1YTVn6', 'HG');	-- Iamsaxyy
 																										-- 4 entries
 	
 
@@ -44,27 +44,27 @@ CREATE TABLE book(
 INSERT into book values
 	(DEFAULT, 'Harry Potter: Philosophers Stone', '9780807286005', 2001, 5, 345, '5900D4EE791A'),
 	(DEFAULT, 'Harry Potter: Chamber of Secrets', '9780439064866', 2002, 12, 794, 'A'),
-	(DEFAULT, 'Harry Potter: Prisoner of Azkaban', '9780439655484', 2004, 11, 479, 'A'),
-	(DEFAULT, 'The Black Stallion', '9780340196878', 1975, 11, 285, 'A'),
-	(DEFAULT, 'The Adventures of Sherlock Holmes', '9780192823786', 1994, 32, 150, 'A'),
+	(DEFAULT, 'Harry Potter: Prisoner of Azkaban', '9780439655484', 2004, 11, 479, 'B'),
+	(DEFAULT, 'The Black Stallion', '9780340196878', 1975, 11, 285, 'C'),
+	(DEFAULT, 'The Adventures of Sherlock Holmes', '9780192823786', 1994, 32, 150, 'D'),
 																-- 5 entries
-	(DEFAULT, 'To Kill a Mockingbird', '9780061120084', 1960, 5, 500, 'A'),
-	(DEFAULT, '1984', '9780451524935', 1949, 3, 700, 'A'),
-	(DEFAULT, 'The Great Gatsby', '9780743273565', 1925, 8, 600, 'A'),
-	(DEFAULT, 'The Catcher in the Rye', '9780241950425', 1951, 2, 800, 'A'),
-	(DEFAULT, 'Pride and Prejudice', '9780141439518', 1813, 6, 900, 'A'),
+	(DEFAULT, 'To Kill a Mockingbird', '9780061120084', 1960, 5, 500, 'E'),
+	(DEFAULT, '1984', '9780451524935', 1949, 3, 700, 'F'),
+	(DEFAULT, 'The Great Gatsby', '9780743273565', 1925, 8, 600, 'G'),
+	(DEFAULT, 'The Catcher in the Rye', '9780241950425', 1951, 2, 800, 'H'),
+	(DEFAULT, 'Pride and Prejudice', '9780141439518', 1813, 6, 900, 'I'),
 																-- 10 entries
-	(DEFAULT, 'Crime and Punishment', '9780143107637', 1866, 6, 1100, 'A'),
-	(DEFAULT, 'The Brothers Karamazov', '9780141191654', 1880, 2, 1300, 'A'),
+	(DEFAULT, 'Crime and Punishment', '9780143107637', 1866, 6, 1100, 'J'),
+	(DEFAULT, 'The Brothers Karamazov', '9780141191654', 1880, 2, 1300, 'K'),
 	(DEFAULT, 'The Alchemist', '9780061120084', 1988, 1, 2400, '5900D49B796F'),
-	(DEFAULT, 'Sherlock Holmes: A Study in Scarlet', '9780997720702', 1887, 3, 600, 'A'),
-	(DEFAULT, 'Sherlock Holmes: The Hound of the Baskervilles', '9781503332068', 1902, 5, 750, 'A'),
+	(DEFAULT, 'Sherlock Holmes: A Study in Scarlet', '9780997720702', 1887, 3, 600, 'L'),
+	(DEFAULT, 'Sherlock Holmes: The Hound of the Baskervilles', '9781503332068', 1902, 5, 750, 'M'),
 																-- 15 entries
-	(DEFAULT, 'Sherlock Holmes: The Sign of the Four', '9781979988764', 1890, 6, 800, 'A'),
-	(DEFAULT, 'Brida', '9780061120085', 1990, 8, 1000, 'A'),
-	(DEFAULT, 'Veronika Decides to Die', '9780061120086', 1998, 5, 900, 'A'),
-	(DEFAULT, 'The Witch of Portobello', '9780061120087', 2006, 6, 1100, 'A'),
-	(DEFAULT, 'Eleven Minutes', '9780061120088', 2003, 7, 950, 'A');
+	(DEFAULT, 'Sherlock Holmes: The Sign of the Four', '9781979988764', 1890, 6, 800, 'N'),
+	(DEFAULT, 'Brida', '9780061120085', 1990, 8, 1000, 'O'),
+	(DEFAULT, 'Veronika Decides to Die', '9780061120086', 1998, 5, 900, 'P'),
+	(DEFAULT, 'The Witch of Portobello', '9780061120087', 2006, 6, 1100, 'Q'),
+	(DEFAULT, 'Eleven Minutes', '9780061120088', 2003, 7, 950, 'R');
 																-- 20 entries
 
 

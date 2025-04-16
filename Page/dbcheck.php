@@ -1,5 +1,11 @@
 <?php
-	$con = new mysqli("localhost", "root", "", "project", 3306);
+	$host = "localhost";		// variables to store database connection parameters.
+	$username = "root";
+	$pass = "";
+	$database = "project";
+	$port = 3306;
+
+	$con = new mysqli($host, $username, $pass, $database, $port);
 	$stmt = $con->prepare("SELECT * FROM member WHERE instituteID = ?");
 	$stmt->bind_param("i", $_POST['username']);
 	$stmt->execute();
@@ -18,7 +24,7 @@
 	else
 	{
 		$var = $name;
-		$con = new mysqli("localhost", "root", "", "project", 3306);
+		$con = new mysqli($host, $username, $pass, $database, $port);
 		$ans = $con->query("SELECT pass FROM member WHERE instituteID = $var");
 		$row = mysqli_fetch_row($ans);
 		$pass = $_POST['password'];

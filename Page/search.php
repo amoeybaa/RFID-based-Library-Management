@@ -40,11 +40,17 @@
 		        <h2>Search Results</h2>
 		        <br>
 		        <?php
+					$host = "localhost";		// variables to store database connection parameters.
+					$username = "root";
+					$pass = "";
+					$database = "project";
+					$port = 3306;
+
 					if (isset($_POST["search"]))
 					{
 						$key = $_POST["search"];
 						$nkey = "%$key%";
-						$con = new mysqli("localhost", "root", "", "project", 3306);
+						$con = new mysqli($host, $username, $pass, $database, $port);
 						$stmt = $con->prepare("	SELECT book.title, author.name, book.copies FROM book 
 												JOIN auth_book ON book.bookID = auth_book.bookID 
 												JOIN author ON auth_book.authorID = author.authorID 

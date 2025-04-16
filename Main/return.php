@@ -28,11 +28,17 @@
 		<div class = "mainarea">
 		
 		<?php
+			$host = "localhost";		// variables to store database connection parameters.
+			$username = "root";
+			$pass = "";
+			$database = "project";
+			$port = 3306;
+
 			if(isset($_COOKIE['memID']) && !(isset($_COOKIE['bookID'])))
 			{
 				$memID = $_COOKIE['memID'];
 				
-				$con = new mysqli("localhost", "root", "", "project", 3306);
+				$con = new mysqli($host, $username, $pass, $database, $port);
 				$ans = $con->query("SELECT * FROM member WHERE rfid = '$memID'");
 				if($ans->num_rows == 0)
 				{
@@ -72,7 +78,7 @@
 			else if((isset($_COOKIE['memID'])) && (isset($_COOKIE['bookID'])))
 			{
 				$bookID = $_COOKIE['bookID'];
-				$con = new mysqli("localhost", "root", "", "project", 3306);
+				$con = new mysqli($host, $username, $pass, $database, $port);
 				$ans = $con->query("SELECT * FROM book WHERE rfid = '$bookID'");
 				if($ans->num_rows == 0)
 				{

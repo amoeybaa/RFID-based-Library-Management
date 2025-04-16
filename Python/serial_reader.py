@@ -1,6 +1,8 @@
 import serial
 import time
 
+# Configure details of Serial() as per the COM port or USB/tty port on your machine through which serial data is being transmitted.
+
 def read_serial_data(port='COM3', baudrate=9600, timeout=3):
     try:
         with serial.Serial(port, baudrate, timeout=timeout) as ser:

@@ -16,9 +16,15 @@
 	    <div class="content">
 		<header>
 		    <?php
-			session_start();
-			$var = $_SESSION['admin'];
-			echo "<h1>Hello $var!</h1>";
+				session_start();
+				$var = $_SESSION['admin'];
+				echo "<h1>Hello $var!</h1>";
+
+				$host = "localhost";		// variables to store database connection parameters.
+				$username = "root";
+				$pass = "";
+				$database = "project";
+				$port = 3306;
 		    ?>
 		</header>
 		<nav class="navigation">
@@ -36,7 +42,7 @@
 		            <h3>Books Issued This Month</h3>
 			    <br><br>
 			    <?php
-					$con = new mysqli("localhost", "root", "", "project", 3306);
+					$con = new mysqli($host, $username, $pass, $database, $port);
 					$ans = $con->query("SELECT COUNT(*) FROM borrowing WHERE borrow_date >= DATE_FORMAT(CURRENT_DATE, '%Y-%m-01')");
 					$row = mysqli_fetch_row($ans);
 					echo "<h2>$row[0]</h2>";
