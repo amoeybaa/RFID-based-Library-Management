@@ -48,6 +48,6 @@
   * Admins can add, update, or delete books and members.
 
 ## Authors and Acknowledgements
-This project was the mandatory final year project of my bachelor's degree, made in collaboration with my project group "Group BG5".
+This project was the mandatory final year project of my bachelor's degree, made together with my project group "Group BG5".
 
 Made during my 5th and 6th Semester (last year) at Fergusson College pursuing B.Sc. (Computer Science).
